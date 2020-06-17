@@ -1,5 +1,4 @@
 from flask import Flask, send_from_directory
-from glob import glob
 from raspatela import main
 
 
@@ -12,9 +11,13 @@ def index():
 
 
 @app.route("/<youtuber>")
-def download(youtuber):
-    main(youtuber)
-    filename = glob("static/*.csv")[0][7:]
+def getdata(youtuber):
+    filename = main(youtuber)
+    return f"File available at the URL /{filename}"
+
+
+@app.route("/<filename>")
+def download(filename):
     return send_from_directory("static", filename)
 
 

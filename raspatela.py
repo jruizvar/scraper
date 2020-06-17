@@ -51,6 +51,7 @@ def main(youtuber):
     descriptions = iterate_over_videos(popular_videos)
     out = f"static/{youtuber}_video_descriptions.csv"
     pd.Series(descriptions, name="description", dtype=str).to_csv(out)
+    return out[7:]
 
 
 if __name__ == "__main__":
