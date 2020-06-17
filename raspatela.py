@@ -49,7 +49,7 @@ def iterate_over_videos(video_ids):
 def main(youtuber):
     popular_videos = get_popular_videos(youtuber)
     descriptions = iterate_over_videos(popular_videos)
-    out = f"{youtuber}_video_descriptions.csv"
+    out = f"static/{youtuber}_video_descriptions.csv"
     pd.Series(descriptions, name="description", dtype=str).to_csv(out)
 
 
