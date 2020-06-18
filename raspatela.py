@@ -1,7 +1,6 @@
 """ Raspatela para pegar a descrição dos videos mais
     populares de um determinado youtuber.
 
-
     O resultado é um arquivo CSV com duas colunas:
       - coluna 1: vid (vídeo-ID)
       - coluna 2: descrição do vídeo
